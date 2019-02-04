@@ -1,0 +1,7 @@
+---
+  - name: Rollout file
+    template:
+      src: templates/file.txt
+      dest: "{{file_location}}"
+      owner: "{{user}}"
+      mode: 0444

@@ -1,0 +1,4 @@
+user: ubuntu
+uid: 1001
+file_content: "I'm on a horse!"
+file_location: /home/vagrant/file.txt

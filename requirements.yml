@@ -1,0 +1,2 @@
+- src: git+git@bxxxxxxx/xxxx-ansible-prometheus.git
+- src: git+git@bxxxxxx/xxxxxxxansible-docker.git

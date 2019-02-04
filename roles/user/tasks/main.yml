@@ -1,0 +1,9 @@
+---
+
+- name: Ensure user exists
+  user:
+    name: "{{user}}"
+    uid: "{{uid}}"
+    # append: yes
+    # groups:
+    #   - docker

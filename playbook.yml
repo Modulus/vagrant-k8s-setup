@@ -1,0 +1,27 @@
+---
+- hosts: storage_nodes
+  remote_user: vagrant
+  become: yes
+  tags:
+    - disk
+  tasks:
+    - name: Ensure data folder exists
+      file:
+        path: /data
+        state: directory
+    - name: Ensure data drive is paritioned and ready
+      parted:
+        device: "/dev/sdb"
+        number: 1
+        flags: [lvm]
+        state: present
+    - name: Create filesystem
+      filesystem:
+        fstype: ext4
+        dev: "/dev/sdb1"
+    - name: Mount new partion to /data
+      mount:
+        fstype: ext4
+        src: "/dev/sdb1"
+        path: /data
+        state: mounted     
